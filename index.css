@@ -1,0 +1,67 @@
+.chat {
+    cursor: pointer;
+    position: fixed;
+    background: transparent;
+    bottom: 1em;
+    right: 1em;
+    border-radius: 5em;
+    box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.459);
+}
+.chat-tip {
+    cursor: default;
+    border: .5px solid grey;
+    padding: .2em;
+    position: fixed;
+    right: 4em;
+    bottom: 7em;
+    border-radius: .9em;
+}
+.chat-box {
+    border: .5px solid rgb(187, 187, 187);
+    border-radius: .4em;
+    width: 25vw;
+    height: 60vh;
+    position: fixed;
+    bottom: 10em;
+    right: 2em;
+    overflow-y: auto;
+}
+.chat-box > h5 {
+    font-size: 1.1em;
+    font-weight: none;
+    margin: .5em;
+}
+.bot-text {
+    padding: .2em .3em;
+    display: inline-block;
+    background-color: rgb(144, 211, 231);
+}
+.chat-box > h6 {
+    font-size: 1.1em;
+    font-weight: none;
+    margin: .5em;
+}
+.client-text {
+    text-align: right;
+    display: block;
+}
+.chat-client {
+    display: block;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.options {
+    text-align: center;
+}
+.options > button {
+    padding: .4em;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: rgb(81, 65, 224);
+    border-radius: .9em;
+    margin: .5em;
+}

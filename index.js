@@ -10,22 +10,11 @@ name.addEventListener("keypress", function(e) {
             question.innerHTML = `${clientName}, como podemos te ajudar?`;
             question.classList.add('bot-question-show');
             document.querySelector('.options').classList.add('options-show');
-            clientName.innerHTML = '';
+            name.value = '';
+            name.setAttribute('disabled', 'disabled');
 
-            const optionsData = [
-                {
-                    title: 'Produto não chegou', 
-                },
-                {
-                    title: 'Cancelar compra', 
-                },
-                {
-                    title: 'Falar com um humano', 
-                },
-                {
-                    title: 'Mais opções'
-                }
-            ]
+            const optionsData = [{title: 'Produto não chegou'},{title: 'Cancelar compra'},{title: 'Falar com um humano'},{title: 'Mais opções'}]
+            const optionsSecondData = [{title: 'Aparece como entregue'},{title: 'Demorou mais do que esperado'}]
 
             optionsData.map(item => {
                 let option = document.createElement('button');
@@ -37,9 +26,22 @@ name.addEventListener("keypress", function(e) {
                    let chosenOption = document.createElement('h6');
                    let chatContainer = document.querySelector('#chat-box')
                    chosenOption.textContent = option.textContent;
-                    chatContainer.appendChild(chosenOption);
-                   console.log(option.textContent)
-               })
+                   chatContainer.appendChild(chosenOption);
+                   let afterSelected = document.createElement('h5');
+                   chatContainer.appendChild(afterSelected);
+
+                   switch (chosenOption.textContent) {
+                       case 'Produto não chegou':
+                        afterSelected.textContent = 'Escolha qual opção se encaixa melhor';
+                        optionsSecondData.map(item => {
+                            let optionSecond = document.createElement('button');
+                            let optionsSecond = document.querySelector('#optionsSecond');
+                            optionSecond.textContent = item.title;
+                            optionsSecond.appendChild(optionSecond);
+                            });
+                        break;
+                   }
+            });
         }
     )}
 });

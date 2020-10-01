@@ -56,9 +56,11 @@
     text-align: right;
     margin: .5em;
 }
-.client-text {
-    text-align: right;
-    display: block;
+.chat-box > h5 {
+    padding: .2em .3em;
+    display: inline-block;
+    background-color: rgb(144, 211, 231);
+    border-radius: .3em;
 }
 .chat-client {
     display: block;

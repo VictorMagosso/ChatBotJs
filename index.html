@@ -8,7 +8,7 @@
     <title>ChatBot</title>
 </head>
 <body>
-    <div>
+    <div onclick="showChat()">
         <img class="chat" src="./img/bot.svg" width="7%">
     </div>
     <div class="chat-tip">
@@ -16,17 +16,14 @@
     </div>
     <div class="chat-box">
         <h5 class="bot-text">Olá! Qual o seu nome?</h5>
-        <h6 class="client-text">Victor</h6>
-        <h5 class="bot-text">Victor, como podemos te ajudar?</h5>
-        <div class="options">
-            <button>Produto não chegou</button>
-            <button>Cancelar compra</button>
-            <button>Falar com um humano</button>
-            <button>Mais opções</button>
+        <h6 id="client-name" class="client-text"></h6>
+        <h5 class="bot-question"></h5>
+        <div id="options" class="options">
         </div>
-        <textarea class="chat-client" placeholder="Fique à vontade para tirar suas dúvidas! :)"></textarea>
+        <textarea autofocus id="chat-client" class="chat-client" placeholder="Fique à vontade para tirar suas dúvidas! :)"></textarea>
     </div>
 
+    <script src="index.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

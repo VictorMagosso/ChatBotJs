@@ -25,6 +25,10 @@
     bottom: 10em;
     right: 2em;
     overflow-y: auto;
+    display: none;
+}
+.chat-open {
+    display: block;
 }
 .chat-box > h5 {
     font-size: 1.1em;
@@ -35,6 +39,16 @@
     padding: .2em .3em;
     display: inline-block;
     background-color: rgb(144, 211, 231);
+    border-radius: .3em;
+}
+.bot-question {
+    padding: .2em .3em;
+    display: none;
+    background-color: rgb(144, 211, 231);
+    border-radius: .3em;
+}
+.bot-question-show {
+    display: inline-block;
 }
 .chat-box > h6 {
     font-size: 1.1em;
@@ -55,6 +69,10 @@
 }
 .options {
     text-align: center;
+    display: none;
+}
+.options-show {
+    display: block;
 }
 .options > button {
     padding: .4em;

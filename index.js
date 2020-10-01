@@ -10,8 +10,9 @@ name.addEventListener("keypress", function(e) {
             question.innerHTML = `${clientName}, como podemos te ajudar?`;
             question.classList.add('bot-question-show');
             document.querySelector('.options').classList.add('options-show');
+            clientName.innerHTML = '';
 
-            const options = [
+            const optionsData = [
                 {
                     title: 'Produto não chegou', 
                 },
@@ -26,11 +27,19 @@ name.addEventListener("keypress", function(e) {
                 }
             ]
 
-            options.map(item => {
+            optionsData.map(item => {
                 let option = document.createElement('button');
                 let options = document.querySelector('#options');
                 option.textContent = item.title;
                 options.appendChild(option);
+
+               option.addEventListener("click", () => {
+                   let chosenOption = document.createElement('h6');
+                   let chatContainer = document.querySelector('#chat-box')
+                   chosenOption.textContent = option.textContent;
+                    chatContainer.appendChild(chosenOption);
+                   console.log(option.textContent)
+               })
         }
     )}
 });

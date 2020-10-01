@@ -53,6 +53,7 @@
 .chat-box > h6 {
     font-size: 1.1em;
     font-weight: none;
+    text-align: right;
     margin: .5em;
 }
 .client-text {

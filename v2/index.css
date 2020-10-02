@@ -1,0 +1,9 @@
+.chat-container {
+    border: 1px solid grey;
+    width: 40vw;
+    height: 80vh;
+    overflow-y: scroll;
+}
+.chat-container > .chat-output > textarea {
+    width: 100%;
+}

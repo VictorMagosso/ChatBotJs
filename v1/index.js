@@ -36,6 +36,8 @@ name.addEventListener("keypress", function(e) {
                         optionsSecondData.map(item => {
                             let optionSecond = document.createElement('button');
                             let optionsSecond = document.querySelector('#optionsSecond');
+                            question.classList.add('bot-question-show');
+                            document.querySelector('.options').classList.add('options-show');
                             optionSecond.textContent = item.title;
                             optionsSecond.appendChild(optionSecond);
                             });

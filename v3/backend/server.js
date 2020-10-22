@@ -1,14 +1,16 @@
 const express = require('express');
+// const swaggerConfig = require('./middlewares/swagger');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const PORT = 8080;
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(cors())
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors());
+// app.use(...swaggerConfig);
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.send('server Running')
 });
 
 app.get('/', (req, res) => {

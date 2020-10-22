@@ -1,0 +1,26 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "CHATBOT DOCUMENTATION",
+        "description": "Using the chatbot",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licence/MIT"
+        }
+    },
+    "tags": [{
+        "name": "Instructions",
+        "description": "Endpoints"
+    }],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+
+    },
+    "definitions": {}
+}

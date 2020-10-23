@@ -1,21 +1,19 @@
 import mongoose, { Schema } from 'mongoose';
-import UserMsg from '../../../../../../model/UserMsgModel';
+import UserMsg from '../../../../../model/UserMsgModel';
 
 import errors from '../../../../../common/errors/error-helper';
 
 interface UserMsgController {
   _id?: string;
-  title?: string;
+  theme?: string;
   content?:string;
-  status?:boolean;
-  timeStamp?:Date;
   save?(): UserMsg;
 }
 
 interface UserMsgController {
   new(property: UserMsg): UserMsg;
   find(): UserMsg[];
-  update(_id: UserMsg, title: UserMsg, content: UserMsg, status: UserMsg): UserMsg;
+  update(_id: UserMsg, theme: UserMsg, content: UserMsg): UserMsg;
   deleteOne(_id: UserMsg): UserMsg;
 }
 
@@ -41,9 +39,8 @@ class UserMsgController {
     }
 
     this.usermsgSchema = new database.Schema({
-      title: String,
-      content: String,
-      status: Boolean,
+      theme: String,
+      content: Boolean,
     });
     database.model('UserMsg', this.usermsgSchema);
 
@@ -64,15 +61,13 @@ class UserMsgController {
     }
   }
 
-  async createUserMsg({ title, content, status, timeStamp }: UserMsg): Promise<UserMsg> {
+  async createUserMsg({ theme, content }: UserMsg): Promise<UserMsg> {
     try {
       const UserMsg = await this.createUserMsgSchema();
 
       const usermsg = new UserMsg({
-        title, 
+        theme, 
         content, 
-        status,
-        timeStamp
       });
 
       return usermsg.save();
@@ -81,18 +76,16 @@ class UserMsgController {
     }
   }
 
-  async updateUserMsg({ _id, title, content, status, timeStamp }: UserMsg): Promise<UserMsg> {
+  async updateUserMsg({ _id, theme, content }: UserMsg): Promise<UserMsg> {
     try {
       const UserMsg = await this.createUserMsgSchema();
 
       return UserMsg.update({
         _id
       }, {
-        title
+        theme
       }, {
         content
-      }, {
-        status
       });
     } catch {
       throw errors.generic.unprocessableEntity();

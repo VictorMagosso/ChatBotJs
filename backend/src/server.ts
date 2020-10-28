@@ -1,26 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-// const swaggerConfig = require('./middlewares/swagger');
-const app = express();
-const PORT = 8080;
+import App from './App';
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cors());
-// app.use(...swaggerConfig);
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.send('server Running')
-});
+const server = new App(+PORT);
 
-app.get('/', (req, res) => {
-    req.url
-})
-
-app.post('/salvo', (req, res) => {
-    console.log(req.body)
-});
-
-app.listen(PORT, () => {console.log(
-    `app listen on port ${PORT}`
-)})
+export default server;
